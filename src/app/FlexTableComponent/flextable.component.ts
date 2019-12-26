@@ -110,6 +110,7 @@ export class FlexTableComponent implements AfterViewInit {
           this.currSelectedCell.className = ''
           nextCell.className = 'highlighted'
           this.currSelectedCell = nextCell
+          this.selectedCellId = nextCell['id']
         }
       }
     })
