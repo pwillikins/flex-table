@@ -65,9 +65,12 @@ export class FlexTableComponent implements AfterViewInit {
           if (rowIndex > 0) {
             nextCellId = `table-cell-${rowIndex - 1}-${colIndex}`
           } else {
+            // there is no row above the current selected row
             if (colIndex > 0) {
+              // there is a cell to the left of the one selected
               nextCellId = `table-cell-${this.data.length - 1}-${colIndex - 1}`
             } else {
+              // there is no cell to the left of the one selected
               nextCellId = `table-cell-${this.data.length - 1}-${this.columns.length - 1}`
             }
           }
