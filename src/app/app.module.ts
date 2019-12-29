@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FlexTableComponent } from './FlexTableComponent/flextable.component';
+import { InputComponent } from './FieldTypes/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlexTableComponent
+    FlexTableComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule
@@ -16,4 +18,4 @@ import { FlexTableComponent } from './FlexTableComponent/flextable.component';
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {}
