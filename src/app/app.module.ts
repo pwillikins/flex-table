@@ -6,6 +6,7 @@ import { FlexTableComponent } from './FlexTableComponent/flextable.component';
 import { InputComponent } from './FieldTypes/InputComponent/input.component';
 import { CheckboxComponent } from './FieldTypes/CheckboxComponent/checkbox.component';
 import { DropdownComponent } from './FieldTypes/DropdownComponent/dropdown.component';
+import { DateComponent } from './FieldTypes/DateComponent/date.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { DropdownComponent } from './FieldTypes/DropdownComponent/dropdown.compo
     FlexTableComponent,
     InputComponent,
     CheckboxComponent,
-    DropdownComponent
+    DropdownComponent,
+    DateComponent
   ],
   imports: [
     BrowserModule
