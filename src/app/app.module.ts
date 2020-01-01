@@ -7,6 +7,7 @@ import { InputComponent } from './FieldTypes/InputComponent/input.component';
 import { CheckboxComponent } from './FieldTypes/CheckboxComponent/checkbox.component';
 import { DropdownComponent } from './FieldTypes/DropdownComponent/dropdown.component';
 import { DateComponent } from './FieldTypes/DateComponent/date.component';
+import { MultiDropdownComponent } from './FieldTypes/MultiDropdownComponent/MultiDropdown.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DateComponent } from './FieldTypes/DateComponent/date.component';
     InputComponent,
     CheckboxComponent,
     DropdownComponent,
-    DateComponent
+    DateComponent,
+    MultiDropdownComponent
   ],
   imports: [
     BrowserModule
