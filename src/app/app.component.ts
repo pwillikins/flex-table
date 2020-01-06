@@ -15,13 +15,18 @@ export class AppComponent {
     },
     {
       title: 'column title 2',
-      type: 'input',
+      type: 'dropdown',
       class: '',
-      data: 'code'
+      data: 'code',
+      dropdownOptions: [
+        {id: 1, option: 'Option 1'},
+        {id: 2, option: 'Option 2'},
+        {id: 3, option: 'Option 3'}
+      ]
     },
     {
       title: 'column title 3',
-      type: 'input',
+      type: 'checkbox',
       class: '',
       data: 'description'
     }
@@ -31,17 +36,17 @@ export class AppComponent {
     {
       name: 'Alice Cooper',
       code: '12345',
-      description: 'TEST'
+      description: 'true'
     },
     {
       name: 'Bob Thunder',
       code: '98765',
-      description: 'TEST'
+      description: 'false'
     },
     {
       name: 'Jay Swift',
       code: '09578',
-      description: 'TEST'
+      description: 'true'
     }
   ]
 }

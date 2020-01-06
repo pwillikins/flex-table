@@ -1,12 +1,6 @@
 <select multiple
-        [(ngModel)]="data"
+        [(ngModel)]="fieldData"
         (ngModelChange)="fieldUpdated.emit($event)">
   <option [value]="option"
-          *ngFor=let
-          option
-          of
-          fieldOptions>{{ option }}</option>
-  <!-- <option value="saab">Saab</option>
-  <option value="opel">Opel</option>
-  <option value="audi">Audi</option> -->
+          *ngFor="let option of fieldOptions">{{ option }}</option>
 </select>

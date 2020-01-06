@@ -1,3 +1,4 @@
 <input class="input-field"
-       [(ngModel)]="data"
-       (ngModelChange)="fieldUpdated.emit($event)">
+       type="text"
+       [(ngModel)]="fieldData"
+       (ngModelChange)="fieldUpdated.emit($event)" />

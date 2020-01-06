@@ -1,17 +1,25 @@
 <div [ngStyle]="{'height.px': height, 'width.px': width}">
   <table class="flex-table">
     <thead>
-      <th *ngFor="let column of columns; index as colIndex; trackBy: trackByFn"
+      <th draggable="true"
+          *ngFor="let column of columns; index as colIndex; trackBy: trackByFn"
           [attr.data-header-id]="colIndex"
           id="{{'table-header-' + colIndex}}">{{ column.title }}</th>
     </thead>
 
     <tbody>
-      <tr *ngFor="let row of data; index as rowIndex; trackBy: trackByFn">
+      <tr draggable="true"
+          *ngFor="let row of data; index as rowIndex; trackBy: trackByFn">
         <td *ngFor="let column of columns; index as colIndex; trackBy: trackByFn"
             id="{{'table-cell-' + rowIndex + '-' + colIndex}}"
             [attr.data-column-id]="colIndex"
-            [attr.data-row-id]="rowIndex">{{ row[column.data] }}</td>
+            [attr.data-row-id]="rowIndex">
+          <field-template [fieldData]="row[column.data]"
+                          [fieldOptions]="column.dropdownOptions"
+                          [fieldType]="column.type"
+                          (fieldUpdated)="updateEvent($event)"></field-template>
+        </td>
+        <!-- {{ row[column.data] }}</td> -->
       </tr>
     </tbody>
   </table>

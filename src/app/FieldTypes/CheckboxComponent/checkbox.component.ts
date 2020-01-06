@@ -12,4 +12,7 @@ export class CheckboxComponent {
 
   @Output() fieldUpdated: EventEmitter<any> = new EventEmitter()
 
+  ngOnInit() {
+    console.log('data', this.fieldData)
+  }
 }

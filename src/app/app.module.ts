@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { FlexTableComponent } from './FlexTableComponent/flextable.component';
+import { FieldTemplateComponent } from './FieldTemplate/FieldTemplate.component';
 import { InputComponent } from './FieldTypes/InputComponent/input.component';
 import { CheckboxComponent } from './FieldTypes/CheckboxComponent/checkbox.component';
 import { DropdownComponent } from './FieldTypes/DropdownComponent/dropdown.component';
@@ -13,6 +16,7 @@ import { MultiDropdownComponent } from './FieldTypes/MultiDropdownComponent/Mult
   declarations: [
     AppComponent,
     FlexTableComponent,
+    FieldTemplateComponent,
     InputComponent,
     CheckboxComponent,
     DropdownComponent,
@@ -20,7 +24,8 @@ import { MultiDropdownComponent } from './FieldTypes/MultiDropdownComponent/Mult
     MultiDropdownComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

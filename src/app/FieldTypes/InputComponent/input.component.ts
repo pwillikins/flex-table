@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'input-field',
@@ -6,10 +6,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input.component.scss']
 })
 
-export class InputComponent {
+export class InputComponent implements OnInit {
 
   @Input() fieldData
 
   @Output() fieldUpdated: EventEmitter<any> = new EventEmitter()
 
+  constructor() {}
+
+  ngOnInit() {
+    console.log('field data', this.fieldData)
+  }
 }

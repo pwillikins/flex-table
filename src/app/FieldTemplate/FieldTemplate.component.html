@@ -1,0 +1,17 @@
+<input-field *ngIf="fieldType === 'input'"
+             [fieldData]="fieldData"
+             (fieldUpdated)="fieldUpdated.emit($event)"></input-field>
+<checkbox-field *ngIf="fieldType === 'checkbox'"
+                [fieldData]="fieldData"
+                (fieldUpdated)="fieldUpdated.emit($event)"></checkbox-field>
+<date-field *ngIf="fieldType === 'date'"
+            [fieldData]="fieldData"
+            (fieldUpdated)="fieldUpdated.emit($event)"></date-field>
+<dropdown-field *ngIf="fieldType === 'dropdown'"
+                [fieldData]="fieldData"
+                [fieldOptions]="fieldOptions"
+                (fieldUpdated)="fieldUpdated.emit($event)"></dropdown-field>
+<multi-dropdown-field *ngIf="fieldType === 'multi-dropdown'"
+                      [fieldData]="fieldData"
+                      [fieldOptions]="fieldOptions"
+                      (fieldUpdated)="fieldUpdated.emit($event)"></multi-dropdown-field>

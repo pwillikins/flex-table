@@ -118,4 +118,8 @@ export class FlexTableComponent implements AfterViewInit {
       }
     })
   }
+
+  updateEvent(event) {
+    console.log('event -->', event)
+  }
 }
