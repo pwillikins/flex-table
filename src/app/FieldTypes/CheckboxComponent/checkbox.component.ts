@@ -9,10 +9,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class CheckboxComponent {
 
   @Input() fieldData
+  checkbox: any = {
+    checked: false
+  }
 
   @Output() fieldUpdated: EventEmitter<any> = new EventEmitter()
 
   ngOnInit() {
-    console.log('data', this.fieldData)
+    this.checkbox.checked = this.fieldData || false
+    // console.log('checked', this.checkbox.checked)
   }
 }

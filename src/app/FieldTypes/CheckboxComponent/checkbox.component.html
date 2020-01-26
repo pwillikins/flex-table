@@ -1,6 +1,4 @@
 <input class="checkbox-field"
        type="checkbox"
-       id="some_checkbox"
-       name="checkbox-field"
-       [(ngModel)]="fieldData"
-       (ngModelChange)="fieldUpdated.emit($event)">
+       [(ngModel)]="checkbox.checked"
+       (ngModelChange)="fieldUpdated.emit($event)" />
