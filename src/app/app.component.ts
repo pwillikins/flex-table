@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  columns = [
+  columns: Array<Column> = [
     {
       title: 'column title 1',
       type: 'input',
@@ -35,24 +35,26 @@ export class AppComponent {
   data = [
     {
       name: 'Alice Cooper',
-      code: '12345',
-      description: 'true'
+      code: {id: 2},
+      description: true
     },
     {
       name: 'Bob Thunder',
-      code: '98765',
-      description: 'false'
+      code: {id: 3},
+      description: false
     },
     {
       name: 'Jay Swift',
-      code: '09578',
-      description: 'true'
+      code: {id: 1},
+      description: true
     }
   ]
 }
 
-export interface Column {
-  type: String,
-  class: String,
-  title: String
+interface Column {
+  type: string,
+  class: string,
+  title: string,
+  data: string,
+  dropdownOptions?: Array<any>
 }
