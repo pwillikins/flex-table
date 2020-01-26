@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'dropdown-field',
@@ -6,11 +6,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./dropdown.component.scss']
 })
 
-export class DropdownComponent {
+export class DropdownComponent implements OnInit {
 
   @Input() fieldData
   @Input() fieldOptions
 
   @Output() fieldUpdated: EventEmitter<any> = new EventEmitter()
 
+
+  ngOnInit() {
+    // console.log('fieldData', this.fieldData)
+  }
 }

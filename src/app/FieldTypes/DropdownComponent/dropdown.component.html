@@ -1,5 +1,5 @@
-<select [(ngModel)]="fieldData"
+<select [(ngModel)]="fieldData.id"
         (ngModelChange)="fieldUpdated.emit($event)">
-  <option [value]="option"
+  <option [value]="option.id"
           *ngFor="let option of fieldOptions">{{ option.option }}</option>
 </select>
