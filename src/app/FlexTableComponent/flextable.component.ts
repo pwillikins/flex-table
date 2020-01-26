@@ -18,14 +18,15 @@ export class FlexTableComponent implements AfterViewInit {
   selectedCellId: string
   currSelectedCell: any
 
-  constructor() {}
-
   ngAfterViewInit() {
-    this.setClickEvents()
+    this.setClickEventListeners()
     this.setKeyPressListeners()
   }
 
-  setClickEvents() {
+  /**
+   * Sets listeners for click events
+   */
+  setClickEventListeners() {
     this.columns.forEach((col, index) => {
       document.getElementById(`table-header-${index}`).addEventListener("click", (event) => {
         console.log('clicking the header!', event)
@@ -52,6 +53,9 @@ export class FlexTableComponent implements AfterViewInit {
 
   }
 
+  /**
+   * Sets key press listeners
+   */
   setKeyPressListeners() {
     document.addEventListener("keydown", (event) => {
       if (arrowKeys.includes(event.code) && this.currSelectedCell) {
