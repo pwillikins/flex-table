@@ -1,12 +1,30 @@
 import { TestBed, async } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { FlexTableComponent } from './FlexTableComponent/flextable.component';
+import { FieldTemplateComponent } from './FieldTemplate/FieldTemplate.component';
+import { CheckboxComponent } from './FieldTypes/CheckboxComponent/checkbox.component';
+import { DropdownComponent } from './FieldTypes/DropdownComponent/dropdown.component';
+import { DateComponent } from './FieldTypes/DateComponent/date.component';
+import { InputComponent } from './FieldTypes/InputComponent/input.component';
+import { MultiDropdownComponent } from './FieldTypes/MultiDropdownComponent/MultiDropdown.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        FlexTableComponent,
+        FieldTemplateComponent,
+        CheckboxComponent,
+        DropdownComponent,
+        DateComponent,
+        InputComponent,
+        MultiDropdownComponent
       ],
+      imports: [
+        FormsModule
+      ]
     }).compileComponents();
   }));
 
@@ -19,13 +37,13 @@ describe('AppComponent', () => {
   it(`should have as title 'flex-table'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('flex-table');
+    expect(app.title).toEqual('Flex Table')
   });
 
-  it('should render title', () => {
+  it('should render the flex-table component', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('flex-table app is running!');
+    expect(compiled.querySelector('.content')).toBeDefined();
   });
 });
