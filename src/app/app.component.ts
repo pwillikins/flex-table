@@ -69,14 +69,15 @@ export class AppComponent {
   ]
 
   ngAfterViewInit() {
-    this.setClickEventListeners()
+    this.setTableClickEventListeners()
     this.setKeyPressListeners()
+    this.setDocumentClickEvent()
   }
 
   /**
    * Sets listeners for click events
    */
-  setClickEventListeners() {
+  setTableClickEventListeners() {
     this.columns.forEach((col, index) => {
       document.getElementById(`table-header-${index}`).addEventListener("click", (event) => {
         console.log('clicking the header!', event)
@@ -100,30 +101,6 @@ export class AppComponent {
 
       })
     })
-    
-    document.addEventListener('click', function (event) {
-      // Log the clicked element in the console
-      console.log('event', event)
-      console.log('event.target className', event.target['className'])
-      console.log('does not include', !event.target['className'].includes('flex'))
-
-      if (!event.target['className'].includes('flex') && !event.target['className'].includes('highlighted')) {
-        const elements = document.getElementsByTagName('td')
-        if (elements && elements.length) {
-          console.log('elements -- ', elements)
-          for (let index = 0; index < elements.length; index++) {
-            elements[index]['className'] = ''
-          }
-        }
-      }
-      // If the clicked element doesn't have the right selector, bail
-      // if (!event.target.matches('.click-me')) return;
-
-      // Don't follow the link
-      event.preventDefault()
-
-
-    }, false)
   }
 
   /**
@@ -194,6 +171,26 @@ export class AppComponent {
         }
       }
     })
+  }
+
+  setDocumentClickEvent() {
+    document.addEventListener('click', function (event) {
+      // we reset the table tds className if we're not clicking in the table
+      if (!event.target['className'].includes('flex') && !event.target['className'].includes('highlighted')) {
+        const elements = document.getElementsByTagName('td')
+        if (elements && elements.length) {
+          for (let index = 0; index < elements.length; index++) {
+            elements[index]['className'] = ''
+          }
+        }
+      } else {
+        // If the clicked element doesn't have the right selector, bail
+        return
+      }
+
+      // Don't follow the link
+      event.preventDefault()
+    }, false)
   }
 
   updateEvent(event) {
