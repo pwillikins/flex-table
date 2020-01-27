@@ -4,9 +4,9 @@
             [height]="400"
             [width]="600"></flex-table> -->
 
-<div class="content"
-     [ngStyle]="{'height.px': height, 'width.px': width}">
-  <table class="flex-table">
+<div class="content">
+  <table class="flex-table"
+         [ngStyle]="{'height.px': height, 'width.px': width}">
     <thead>
       <th draggable="true"
           *ngFor="let column of columns; index as colIndex; trackBy: trackByFn"
@@ -16,12 +16,15 @@
 
     <tbody>
       <tr draggable="true"
+          class="flex-tr"
           *ngFor="let row of data; index as rowIndex; trackBy: trackByFn">
         <td *ngFor="let column of columns; index as colIndex; trackBy: trackByFn"
+            class="flex-td"
             id="{{'table-cell-' + rowIndex + '-' + colIndex}}"
             [attr.data-column-id]="colIndex"
             [attr.data-row-id]="rowIndex">
-          <field-template [fieldData]="row[column.data]"
+          <field-template class="flex-template"
+                          [fieldData]="row[column.data]"
                           [fieldOptions]="column.dropdownOptions"
                           [fieldType]="column.type"
                           (fieldUpdated)="updateEvent($event)"></field-template>

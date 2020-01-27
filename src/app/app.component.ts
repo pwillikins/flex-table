@@ -7,7 +7,7 @@ const arrowKeys = [
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title: string = 'Flex Table'
@@ -22,8 +22,8 @@ export class AppComponent {
 
   // setting these defaults to use until the table component's core features are implemented
   // then we'll switch to use the inputs/outputs for managing the actual data flow
-  width: string = '400'
-  height: string = '600'
+  width: string = '600'
+  height: string = '400'
   columns: Array<Column> = [
     {
       title: 'column title 1',
@@ -100,7 +100,30 @@ export class AppComponent {
 
       })
     })
+    
+    document.addEventListener('click', function (event) {
+      // Log the clicked element in the console
+      console.log('event', event)
+      console.log('event.target className', event.target['className'])
+      console.log('does not include', !event.target['className'].includes('flex'))
 
+      if (!event.target['className'].includes('flex') && !event.target['className'].includes('highlighted')) {
+        const elements = document.getElementsByTagName('td')
+        if (elements && elements.length) {
+          console.log('elements -- ', elements)
+          for (let index = 0; index < elements.length; index++) {
+            elements[index]['className'] = ''
+          }
+        }
+      }
+      // If the clicked element doesn't have the right selector, bail
+      // if (!event.target.matches('.click-me')) return;
+
+      // Don't follow the link
+      event.preventDefault()
+
+
+    }, false)
   }
 
   /**
