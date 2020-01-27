@@ -1,7 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { FlexTableComponent } from './FlexTableComponent/flextable.component';
 import { FieldTemplateComponent } from './FieldTemplate/FieldTemplate.component';
 import { CheckboxComponent } from './FieldTypes/CheckboxComponent/checkbox.component';
 import { DropdownComponent } from './FieldTypes/DropdownComponent/dropdown.component';
@@ -14,7 +13,6 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        FlexTableComponent,
         FieldTemplateComponent,
         CheckboxComponent,
         DropdownComponent,

@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { FlexTableComponent } from './FlexTableComponent/flextable.component';
 import { FieldTemplateComponent } from './FieldTemplate/FieldTemplate.component';
 import { InputComponent } from './FieldTypes/InputComponent/input.component';
 import { CheckboxComponent } from './FieldTypes/CheckboxComponent/checkbox.component';
@@ -15,7 +14,6 @@ import { MultiDropdownComponent } from './FieldTypes/MultiDropdownComponent/Mult
 @NgModule({
   declarations: [
     AppComponent,
-    FlexTableComponent,
     FieldTemplateComponent,
     InputComponent,
     CheckboxComponent,
